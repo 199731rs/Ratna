@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="APIKey/username" value="1234567898678"/>
+  <parameter name="URL" value="mobile.com"/>
+  <listeners>
+    <listener class-name="Frameworks.Listeners"/>
+  </listeners>
+  <test name="Regression">
+    <parameter name="APIKey/username" value="1234567898678"/>
+    <parameter name="URL" value="Personal.com/"/>
+    <classes>
+      <class name="Frameworks.TestNG1"/>
+      <class name="Frameworks.TestNG3"/>
+    </classes>
+  </test> <!-- Regression -->
+  <test name="mobile">
+    <parameter name="URL" value="mobile.com"/>
+    <classes>
+      <class name="Frameworks.Testng2"/>
+    </classes>
+  </test> <!-- mobile -->
+  <test parallel="tests" name="Regression(failed)">
+    <parameter name="APIKey/username" value="1234567898678"/>
+    <parameter name="URL" value="Personal.com/"/>
+    <classes>
+      <class name="Frameworks.Testng2">
+        <methods>
+          <include name="BfClass"/>
+          <include name="AFterMethod"/>
+          <include name="lastExecute"/>
+          <include name="bfSuite"/>
+          <include name="beforeEvery"/>
+          <include name="prequiste"/>
+          <include name="AfClass"/>
+          <include name="afsuite"/>
+        </methods>
+      </class> <!-- Frameworks.Testng2 -->
+      <class name="Frameworks.TestNG3">
+        <methods>
+          <include name="LoginAIHomeLoan"/>
+        </methods>
+      </class> <!-- Frameworks.TestNG3 -->
+    </classes>
+  </test> <!-- Regression(failed) -->
+</suite> <!-- Failed suite [Suite] -->
